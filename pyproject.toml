@@ -1,0 +1,9 @@
+[project]
+name = "new-app"
+version = "0.1.0"
+description = "Simple static website using Flask and Bootstrap"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "flask>=2.3.0",
+]

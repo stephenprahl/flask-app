@@ -1,0 +1,352 @@
+/* Custom CSS for My Website */
+
+/* Variables */
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #166088;
+  --accent-color: #44b89d;
+  --dark-color: #2c3e50;
+  --light-color: #f8f9fa;
+  --text-color: #333333;
+  --light-text-color: #f8f9fa;
+  --border-radius: 6px;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* General Styles */
+body {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: #ffffff;
+}
+
+a {
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+/* Header/Navigation Styles */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 1rem;
+}
+
+.navbar-dark {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.nav-link {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.2rem;
+}
+
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: var(--border-radius);
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 5rem 0;
+  background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('/static/img/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Main Content Styles */
+main {
+  min-height: calc(100vh - 250px);
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: var(--dark-color);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-color);
+}
+
+.text-center .section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+}
+
+/* Card Styles */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Button Styles */
+.btn {
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  padding: 0.6rem 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  box-shadow: 0 5px 15px rgba(74, 111, 165, 0.4);
+}
+
+.btn-outline-secondary {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-outline-secondary:hover {
+  color: white;
+  background-color: var(--secondary-color);
+  box-shadow: 0 5px 15px rgba(22, 96, 136, 0.4);
+}
+
+/* Features Section */
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+/* Process Section */
+.process-icon {
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.process-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(74, 111, 165, 0.5);
+}
+
+/* Pricing Cards */
+.pricing-card {
+  transition: var(--transition);
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card .card-header {
+  border-bottom: none;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.price .currency {
+  font-size: 1.2rem;
+  vertical-align: super;
+  margin-right: 2px;
+}
+
+.price .period {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6c757d;
+}
+
+.popular-badge {
+  border-radius: 0 0 0 var(--border-radius);
+}
+
+/* Team Cards */
+.team-card .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--light-color);
+  border-radius: 50%;
+  color: var(--dark-color);
+  transition: var(--transition);
+}
+
+.team-card .social-links a:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Footer Styles */
+footer {
+  background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
+  color: var(--light-text-color);
+  padding: 3rem 0;
+  margin-top: 3rem;
+}
+
+.footer-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+}
+
+.social-icon:hover {
+  color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+/* Form Styles */
+.form-control {
+  border-radius: var(--border-radius);
+  padding: 0.8rem;
+  border: 1px solid #dee2e6;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(74, 111, 165, 0.25);
+}
+
+/* Accordion Styles */
+.accordion-button:not(.collapsed) {
+  background-color: rgba(74, 111, 165, 0.1);
+  color: var(--primary-color);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(74, 111, 165, 0.5);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Utility Classes */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+
+.text-accent {
+  color: var(--accent-color) !important;
+}
+
+.bg-light-gray {
+  background-color: #f8f9fa;
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+.rounded-custom {
+  border-radius: var(--border-radius);
+}

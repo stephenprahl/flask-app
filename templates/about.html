@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}About | My Website{% endblock %}
+
+{% block hero %}
+<section class="hero-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center fade-in">
+        <h1 class="display-4 fw-bold mb-4">About Us</h1>
+        <p class="lead mb-0">Get to know our team and our story</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-10 mx-auto">
+    <!-- Our Story Section -->
+    <section class="mb-5">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img src="https://via.placeholder.com/600x400" alt="Our Story" class="img-fluid rounded-custom shadow">
+        </div>
+        <div class="col-md-6">
+          <h2 class="section-title">Our Story</h2>
+          <p>Founded in 2010, our company has evolved from a small startup into a thriving business with a focus on
+            delivering exceptional quality and service to our clients.</p>
+          <p>We've grown by maintaining our core values of integrity, innovation, and customer satisfaction, allowing us
+            to build long-lasting relationships with clients across various industries.</p>
+          <div class="d-flex mt-4">
+            <div class="me-4">
+              <h4 class="text-primary mb-1">10+</h4>
+              <p class="mb-0 text-muted">Years Experience</p>
+            </div>
+            <div>
+              <h4 class="text-primary mb-1">200+</h4>
+              <p class="mb-0 text-muted">Projects Completed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="py-5 bg-light-gray rounded-custom my-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="text-center">
+              <div class="feature-icon mb-3">
+                <i class="bi bi-bullseye"></i>
+              </div>
+              <h3>Our Mission</h3>
+              <p>To provide innovative solutions that empower our clients to achieve their business goals while
+                maintaining the highest levels of quality and service.</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="text-center">
+              <div class="feature-icon mb-3">
+                <i class="bi bi-eye"></i>
+              </div>
+              <h3>Our Vision</h3>
+              <p>To become a leading provider in our industry, recognized for our exceptional service, innovative
+                approaches, and commitment to client success.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="feature-icon mb-3">
+                <i class="bi bi-star"></i>
+              </div>
+              <h3>Our Values</h3>
+              <p>Integrity, innovation, excellence, collaboration, and customer satisfaction form the foundation of
+                everything we do.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="my-5">
+      <h2 class="section-title text-center mb-5">Our Team</h2>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card team-card h-100">
+            <img src="https://via.placeholder.com/400x500" class="card-img-top" alt="Team Member 1">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-1">John Doe</h5>
+              <p class="text-muted mb-3">Founder & CEO</p>
+              <p class="card-text">With over 15 years of industry experience, John leads our company with vision and
+                expertise.</p>
+              <div class="social-links mt-3">
+                <a href="#" class="me-2"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card team-card h-100">
+            <img src="https://via.placeholder.com/400x500" class="card-img-top" alt="Team Member 2">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-1">Jane Smith</h5>
+              <p class="text-muted mb-3">Creative Director</p>
+              <p class="card-text">Jane brings creativity and innovation to every project, ensuring our designs stand
+                out.</p>
+              <div class="social-links mt-3">
+                <a href="#" class="me-2"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card team-card h-100">
+            <img src="https://via.placeholder.com/400x500" class="card-img-top" alt="Team Member 3">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-1">Michael Johnson</h5>
+              <p class="text-muted mb-3">Technical Lead</p>
+              <p class="card-text">Michael's technical expertise ensures we deliver robust and scalable solutions.</p>
+              <div class="social-links mt-3">
+                <a href="#" class="me-2"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="my-5 py-5 bg-light-gray rounded-custom">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">What Our Clients Say</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-center mb-4">
+                  <i class="bi bi-quote fs-1 text-primary opacity-50"></i>
+                </div>
+                <p class="lead text-center mb-4">"Working with this team has been an excellent experience. They
+                  delivered our project on time and exceeded our expectations in terms of quality and service."</p>
+                <div class="text-center">
+                  <h5 class="mb-1">Robert Brown</h5>
+                  <p class="text-muted mb-0">CEO, XYZ Company</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="text-center my-5">
+      <h2>Ready to Work With Us?</h2>
+      <p class="lead mb-4">Contact our team today and let's discuss how we can help you achieve your goals.</p>
+      <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg px-5">Get in Touch</a>
+    </section>
+  </div>
+</div>
+{% endblock %}
