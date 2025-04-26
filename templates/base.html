@@ -56,6 +56,40 @@
                 <i class="bi bi-envelope me-1"></i> Contact
               </a>
             </li>
+            {% if current_user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == url_for('dashboard') %}active{% endif %}"
+                href="{{ url_for('dashboard') }}">
+                <i class="bi bi-speedometer2 me-1"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-person me-1"></i> {{ current_user.username }}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                <li><a class="dropdown-item" href="{{ url_for('profile') }}">Profile</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
+              </ul>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == url_for('login') %}active{% endif %}"
+                href="{{ url_for('login') }}">
+                <i class="bi bi-box-arrow-in-right me-1"></i> Login
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == url_for('register') %}active{% endif %}"
+                href="{{ url_for('register') }}">
+                <i class="bi bi-person-plus me-1"></i> Register
+              </a>
+            </li>
+            {% endif %}
           </ul>
         </div>
       </div>
@@ -65,6 +99,18 @@
     {% block hero %}{% endblock %}
 
     <main class="container py-5">
+      <!-- Flash Messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+
       {% block content %}{% endblock %}
     </main>
 

@@ -54,12 +54,18 @@ a:hover {
   font-size: 0.9rem;
   letter-spacing: 0.5px;
   padding: 0.5rem 1rem !important;
-  margin: 0 0.2rem;
+  margin: 0 0.7rem;
+  /* Increased from 0.2rem to 0.7rem for better spacing */
 }
 
 .nav-link.active {
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: var(--border-radius);
+}
+
+/* Add spacing to the navbar list items */
+.navbar-nav .nav-item {
+  margin: 0 0.3rem;
 }
 
 /* Hero Section */

@@ -1,87 +1,105 @@
-# My Website
+# Flask Authentication System
 
-A simple, responsive website built with Flask and Bootstrap.
-
-## Overview
-
-This is a simple static website template built with:
-
-- Python/Flask for server-side rendering
-- Bootstrap 5 for responsive layouts and components
-- Custom CSS for styling enhancements
-- Vanilla JavaScript for interactivity
+A Flask application with a complete authentication system that includes user registration, login, profile management, and password reset functionality.
 
 ## Features
 
-- Responsive design that works on desktop, tablet, and mobile
-- Navigation menu with active page highlighting
-- Four key pages: Home, About, Services, and Contact
-- Contact form with client-side validation
-- Card layouts for presenting content
-- Interactive elements with hover effects
-- Footer with copyright information and social media links
+- User registration and authentication
+- Login and logout functionality
+- Password reset via email
+- User profile management
+- Protected routes with login required
+- User dashboard
+- SQLAlchemy database integration
+- Environment variable configuration
 
-## Getting Started
+## Technologies Used
 
-### Prerequisites
+- Flask
+- Flask-SQLAlchemy (Database ORM)
+- Flask-Login (User session management)
+- Flask-WTF (Form handling and validation)
+- Flask-Mail (Email sending)
+- Werkzeug (Password hashing)
+- Python-dotenv (Environment variable management)
+- Bootstrap 5 (Frontend styling)
+- SQLite (Development database)
 
-- Python 3.11 or higher
+## Installation
 
-### Installation
+1. Clone the repository:
 
-1. Clone this repository or download the files
+```bash
+git clone <repository-url>
+cd flask-app
+```
 
-2. Install dependencies:
+2. Create and activate a virtual environment:
 
-   ```bash
-   pip install -e .
-   ```
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-### Running the Website
+3. Install the required dependencies:
 
-1. From the project root directory, run:
+```bash
+pip install -r requirements.txt
+```
 
-   ```bash
-   python main.py
-   ```
+4. Set up environment variables by creating a `.env` file in the root directory with the following content:
 
-2. Open your browser and navigate to:
+```
+SECRET_KEY=your_super_secret_key_here
+DATABASE_URI=sqlite:///site.db
+MAIL_SERVER=smtp.example.com
+MAIL_PORT=587
+MAIL_USE_TLS=True
+MAIL_USERNAME=your_email@example.com
+MAIL_PASSWORD=your_email_password
+```
 
-   ```
-   http://127.0.0.1:5000
-   ```
+5. Run the application:
 
-## Customizing the Website
+```bash
+python main.py
+```
 
-### Basic Customization
+6. Open your browser and navigate to `http://127.0.0.1:5000/`
 
-1. **Site Title & Branding**: Edit the title and navbar-brand in `templates/base.html`
-2. **Content**: Modify content in each page template (`index.html`, `about.html`, `services.html`, `contact.html`)
-3. **Styling**: Adjust colors, spacing, and other visual elements in `static/css/style.css`
-4. **Contact Information**: Update the contact information in `templates/contact.html`
-5. **Images**: Add your own images to the `static/img` directory and reference them in your HTML
+## Project Structure
 
-### Advanced Customization
+```
+flask-app/
+├── config.py             # Configuration settings
+├── forms.py              # Form definitions
+├── main.py               # Application routes and main file
+├── models.py             # Database models
+├── requirements.txt      # Dependencies
+├── .env                  # Environment variables (create this file)
+├── static/               # Static files (CSS, JS, images)
+└── templates/            # HTML templates
+    ├── about.html
+    ├── base.html         # Base template
+    ├── contact.html
+    ├── dashboard.html    # User dashboard
+    ├── index.html        # Homepage
+    ├── login.html        # Login page
+    ├── profile.html      # User profile
+    ├── register.html     # Registration page
+    ├── reset_request.html # Password reset request
+    ├── reset_token.html  # Password reset with token
+    └── services.html
+```
 
-1. **Adding New Pages**:
-   - Create a new HTML template in the `templates` directory
-   - Add a new route in `main.py`
-   - Add a link to the new page in the navigation menu in `base.html`
+## Usage
 
-2. **Extending Functionality**:
-   - Add form handling in Flask for the contact form
-   - Integrate with a database for dynamic content
-   - Add user authentication if needed
-
-## Deployment
-
-For production deployment, consider:
-
-- Using a production WSGI server like Gunicorn
-- Setting `debug=False` in `main.py`
-- Adding proper error handling
-- Setting up your domain name and SSL certificate
+1. Register a new account using the registration form
+2. Login with your credentials
+3. Visit your dashboard and profile pages
+4. Update your profile information
+5. Use the password reset functionality if needed
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+MIT License

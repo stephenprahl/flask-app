@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-sm border-0 rounded-lg mt-3">
+        <div class="card-header bg-light">
+          <h3 class="text-center font-weight-light my-2">Create Account</h3>
+        </div>
+        <div class="card-body">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+
+          <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+              {{ form.username.label(class="form-label") }}
+              {% if form.username.errors %}
+              {{ form.username(class="form-control is-invalid") }}
+              {% for error in form.username.errors %}
+              <div class="invalid-feedback">{{ error }}</div>
+              {% endfor %}
+              {% else %}
+              {{ form.username(class="form-control") }}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              {{ form.email.label(class="form-label") }}
+              {% if form.email.errors %}
+              {{ form.email(class="form-control is-invalid") }}
+              {% for error in form.email.errors %}
+              <div class="invalid-feedback">{{ error }}</div>
+              {% endfor %}
+              {% else %}
+              {{ form.email(class="form-control") }}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              {{ form.password.label(class="form-label") }}
+              {% if form.password.errors %}
+              {{ form.password(class="form-control is-invalid") }}
+              {% for error in form.password.errors %}
+              <div class="invalid-feedback">{{ error }}</div>
+              {% endfor %}
+              {% else %}
+              {{ form.password(class="form-control") }}
+              {% endif %}
+            </div>
+            <div class="mb-3">
+              {{ form.confirm_password.label(class="form-label") }}
+              {% if form.confirm_password.errors %}
+              {{ form.confirm_password(class="form-control is-invalid") }}
+              {% for error in form.confirm_password.errors %}
+              <div class="invalid-feedback">{{ error }}</div>
+              {% endfor %}
+              {% else %}
+              {{ form.confirm_password(class="form-control") }}
+              {% endif %}
+            </div>
+            <div class="d-grid">
+              {{ form.submit(class="btn btn-primary btn-block") }}
+            </div>
+          </form>
+        </div>
+        <div class="card-footer text-center py-3">
+          <div class="small">
+            Already have an account? <a href="{{ url_for('login') }}">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
