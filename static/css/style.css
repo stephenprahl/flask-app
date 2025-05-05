@@ -38,9 +38,9 @@ a:hover {
   padding: 0.8rem 1rem;
 }
 
-.navbar-dark {
+/* .navbar-dark {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
-}
+} */
 
 .navbar-brand {
   font-weight: 700;
